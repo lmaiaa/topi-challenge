@@ -11,9 +11,8 @@ import { computed, defineComponent, onMounted, onUnmounted, ref } from '@vue/com
 import SearchEngine from '@/components/SearchEngine.vue';
 import MealCard from '../components/MealCard.vue';
 import { useMeals } from '@/composables/use-meals';
-import Observer from '../components/Observer.vue';
 export default defineComponent({
-  components: { SearchEngine, MealCard, Observer },
+  components: { SearchEngine, MealCard },
   setup() {
     const meals = useMeals().meals;
     const slice = ref(5);
