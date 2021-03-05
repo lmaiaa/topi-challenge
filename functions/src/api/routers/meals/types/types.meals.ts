@@ -9,5 +9,7 @@ export interface Meal {
 }
 
 export interface GetMealsResponse {
-  meals: Meal[] | null;
+  meals: Meal[];
 }
+
+export { Area, Category };

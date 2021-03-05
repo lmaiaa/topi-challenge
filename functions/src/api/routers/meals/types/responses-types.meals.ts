@@ -99,5 +99,5 @@ export interface MealsResponse {
 }
 
 export interface TheMealDbResponse {
-  meals: MealsResponse[] | never[];
+  meals: MealsResponse[] | null;
 }

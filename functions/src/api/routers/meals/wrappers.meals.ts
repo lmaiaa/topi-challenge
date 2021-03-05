@@ -1,14 +1,9 @@
-import {
-  MealsResponse,
-  TheMealDbResponse,
-} from "./types/responses-types.meals";
 import { GetMealsResponse, Meal } from "./types/types.meals";
+import { MealsResponse, TheMealDbResponse } from "./types/responses-types.meals";
 
-export function wrapGetMealsResponse(
-  response: TheMealDbResponse
-): GetMealsResponse {
+export function wrapGetMealsResponse(response: TheMealDbResponse): GetMealsResponse {
   return {
-    meals: response.meals === null ? null : response.meals.map(wrapMeal),
+    meals: response.meals === null ? [] : response.meals.map(wrapMeal),
   };
 }
 
