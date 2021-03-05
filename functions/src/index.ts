@@ -1,9 +1,9 @@
-import * as functions from "firebase-functions";
+import path from "path";
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require("dotenv").config({ path: path.join(__dirname, "../.env") });
+
+import * as functions from "firebase-functions";
+import { api as Api } from "./api";
+
+export const api = functions.https.onRequest(Api);
