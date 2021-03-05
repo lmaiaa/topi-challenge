@@ -1,13 +1,13 @@
 {
   "folders": [
 	{
-		"path": "."
-	},
-	{
 		"path": "client"
 	},
 	{
 		"path": "functions"
+	},
+	{
+		"path": "."
 	}
 ],
   "settings": {}
