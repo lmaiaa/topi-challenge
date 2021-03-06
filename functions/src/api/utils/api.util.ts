@@ -1,4 +1,4 @@
-import { ApiRoute } from "./../types/api.types";
+import { ApiRoute } from "../types/api.types";
 import express, { Express, RequestHandler, Router } from "express";
 
 interface RoutesMapOptions {
@@ -21,8 +21,8 @@ export function routesMap({
   routes.forEach(({ method, path, middlewares = [], handlerRequest }) =>
     router[method](path, ...middlewares, (req, res, next) => {
       handlerRequest(req)
-        .then((data) => res.json(data))
-        .catch(next);
+          .then((data) => res.json(data))
+          .catch(next);
     })
   );
 
@@ -34,8 +34,8 @@ export function routesMap({
 }
 
 export function routersMap(
-  app: Express,
-  routers: Record<string, Router>
+    app: Express,
+    routers: Record<string, Router>
 ): Express {
   Object.entries(routers).forEach(([name, router]) => {
     app.use(`/${name}`, router);

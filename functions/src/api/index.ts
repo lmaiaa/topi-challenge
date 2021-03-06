@@ -1,5 +1,5 @@
 import * as routers from "./routers";
-import { routersMap } from "./routers/global/utils/apit.util";
+import { routersMap } from "./utils/api.util";
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";

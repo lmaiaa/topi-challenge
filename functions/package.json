@@ -1,12 +1,12 @@
 {
   "name": "functions",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf lib/* && tsc",
     "build:watch": "tsc -w",
     "serve": "concurrently \"npm run build:watch\" \"firebase emulators:start --only functions\"",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "npm run build && firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
   "engines": {
@@ -16,10 +16,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "concurrently": "^6.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "firebase-admin": "^9.2.0",
-    "firebase-functions": "^3.11.0"
+    "firebase-functions": "^3.11.0",
+    "helmet": "^4.4.1"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
