@@ -13,7 +13,6 @@ const state = reactive<State>({
 export function useLoadingStore() {
   function showLoading(loading: boolean) {
     state.showLoading = loading;
-    console.log(loading, state.showLoading);
   }
   return { getterShowLoading: computed(() => state.showLoading), showLoading };
 }
