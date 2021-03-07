@@ -9,7 +9,7 @@ import { routesMap } from "../../utils/api.util";
 const routes: ApiRoute[] = [
   {
     method: "get",
-    path: "/list",
+    path: "/",
     handlerRequest: ({ query }) => Controllers.getMealByName(query.name),
   },
 ];
