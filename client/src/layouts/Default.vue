@@ -6,12 +6,9 @@
           <div class="slds-page-header__col-title">
             <div class="slds-media">
               <div class="slds-media__figure">
-                <!---
-            <span class="slds-icon_container slds-icon-standard-opportunity">
-              <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                <use xlink:href="@/assets/icons/utility-sprite/svg/symbols.svg#favorite" />
-              </svg>
-            </span>--->
+                <span class="slds-icon_container ">
+                  <img src="https://topi.io/wp-content/uploads/2018/06/cropped-LogoFAVICON1-1-32x32.jpeg" alt="logo" />
+                </span>
               </div>
               <div class="slds-media__body">
                 <div class="slds-page-header__name">
