@@ -4,6 +4,6 @@ import path from "path";
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
 import * as functions from "firebase-functions";
-import { api as Api } from "./api";
+import apiFunction from "./api/api.function";
 
-export const api = functions.https.onRequest(Api);
+export const api = functions.https.onRequest(apiFunction);
