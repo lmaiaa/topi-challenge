@@ -9,7 +9,7 @@
             id="select-01"
             v-model="value"
             @input="$emit('input', $event.target.value)"
-            @change="$emit('changed')"
+            @change="$emit('changed', value)"
           >
             <option value="">Select…</option>
             <option v-for="(option, index) in options" :value="option.slug" :key="index"> {{ option.name }}</option>
