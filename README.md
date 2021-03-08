@@ -12,7 +12,7 @@ O projeto foi hospedado no Google Firebase e pode ser acessado por [aqui](https:
 
 - **VueCLI** - Já exposto, foi utilizado framework VueJs e para inicialização do projeto foi utilizado seu [CLI](https://cli.vuejs.org/).
 - **NodeJS**
-- **Google Firebase** - para hospedagem do front-end no Firebase Hosting e do back-end no Firebase Fucntions.
+- **[Google Firebase](https://firebase.google.com/)** - para hospedagem do front-end no Firebase Hosting e do back-end no Firebase Fucntions.
 - **[Lightning Design](http://lightningdesignsystem.com/)** 
 
 ## Requisitos necessários
