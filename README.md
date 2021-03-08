@@ -3,7 +3,7 @@
 
 ## Sobre o Projeto
 
-O projeto é um livro de receitas onde é possível a realização da busca das receita pelo nome. Foi utilizado uma API externa chamada [TheMealDb](https://www.themealdb.com/) para o consumo dos dados dos cards de receita e foi criado um PWA responsivo e intuitivo.
+O projeto é um livro de receitas onde é possível a realização da busca das receita pelo nome. Foi criado uma API para o consumo e tratamento da API externa chamada [TheMealDb](https://www.themealdb.com/) para o consumo dos dados dos cards das receitas e foi criado um PWA responsivo e intuitivo.
 
 O projeto foi hospedado no Google Firebase e pode ser acessado por [aqui](https://topi-challenge-2b316.web.app/)
 
