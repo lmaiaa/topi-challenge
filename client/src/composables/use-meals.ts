@@ -1,4 +1,4 @@
-import { listMealsByName } from '@/services';
+import { listMealsByArea, listMealsByCategory, listMealsByName } from '@/services';
 import { Meal } from '@serverTypes/meals';
 import { onMounted, readonly, ref } from '@vue/composition-api';
 import { useLoadingStore } from './store/use.global-store';
@@ -14,12 +14,20 @@ export function useMeals() {
     }
   });
   async function getMealsByName(name: string) {
-    console.log(name);
     showLoading(true);
     meals.value = (await listMealsByName(name)).meals;
-
+    showLoading(false);
+  }
+  async function getMealsByCategory(category: string) {
+    showLoading(true);
+    meals.value = (await listMealsByCategory(category)).meals;
+    showLoading(false);
+  }
+  async function getMealsByArea(area: string) {
+    showLoading(true);
+    meals.value = (await listMealsByArea(area)).meals;
     console.log(meals.value);
     showLoading(false);
   }
-  return { meals: readonly(meals), getMealsByName };
+  return { meals: readonly(meals), getMealsByName, getMealsByCategory, getMealsByArea };
 }
