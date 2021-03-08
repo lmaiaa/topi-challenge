@@ -1,21 +1,7 @@
 <template>
   <div class="home" ref="scrollComponent">
     <div class="slds-grid">
-      <input-search v-model="nameSearch" v-if="isFilteredByName" />
-      <select-filter
-        v-model="categorySelected"
-        label="Or filter by category"
-        :options="optionsCategory"
-        @changed="filteredByCategory"
-        v-if="isFilteredByCategory"
-      />
-      <select-filter
-        v-model="areaSelected"
-        label="Or filter by area"
-        :options="optionsArea"
-        v-if="isFilteredByArea"
-        @changed="filteredByArea"
-      />
+      <input-search v-model="nameSearch" />
     </div>
     <div class="slds-grid slds-wrap">
       <meal-card class="slds-col slds-size_1-of-1" v-for="(meal, index) in mealsSliced" :key="index" :meal="meal" />
@@ -42,46 +28,8 @@ export default defineComponent({
     const areaSelected = ref(null);
     const slice = ref(5);
     const CARDS_PER_PAGE = 5;
-    const isFilteredByName = ref(true);
-    const isFilteredByCategory = ref(true);
-    const isFilteredByArea = ref(true);
-
-    const conditionalFilters = (type) => {
-      isFilteredByName.value = false;
-      isFilteredByArea.value = false;
-      isFilteredByCategory.value = false;
-      if (type == 'category') {
-        isFilteredByCategory.value = true;
-        if (categorySelected.value == '') {
-          isFilteredByName.value = true;
-          isFilteredByArea.value = true;
-          isFilteredByCategory.value = true;
-        }
-      } else if (type == 'area') {
-        isFilteredByArea.value = true;
-        if (areaSelected.value == '') {
-          isFilteredByName.value = true;
-          isFilteredByArea.value = true;
-          isFilteredByCategory.value = true;
-        }
-      } else {
-        isFilteredByName.value = true;
-        if (nameSearch.value == '') {
-          isFilteredByName.value = true;
-          isFilteredByArea.value = true;
-          isFilteredByCategory.value = true;
-        }
-      }
-    };
-    const filteredByCategory = () => {
-      conditionalFilters('category');
-    };
-    const filteredByArea = () => {
-      conditionalFilters('area');
-    };
 
     function wrapperGetMeals() {
-      conditionalFilters('name');
       return getMealsByName(nameSearch.value);
     }
     const debounceGetMeals = debounce(wrapperGetMeals, 500);
@@ -122,12 +70,7 @@ export default defineComponent({
       optionsCategory,
       optionsArea,
       categorySelected,
-      areaSelected,
-      isFilteredByName,
-      isFilteredByCategory,
-      isFilteredByArea,
-      filteredByCategory,
-      filteredByArea
+      areaSelected
     };
   }
 });

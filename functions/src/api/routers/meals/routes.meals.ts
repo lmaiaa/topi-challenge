@@ -10,7 +10,7 @@ const routes: ApiRoute[] = [
   {
     method: "get",
     path: "/",
-    handlerRequest: ({ query }) => Controllers.getMealByName(query.name),
+    handlerRequest: ({ query }) => Controllers.getMealByName(query.name, query.category, query.area),
   },
 ];
 
