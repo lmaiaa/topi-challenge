@@ -14,6 +14,7 @@ O projeto foi hospedado no Google Firebase e pode ser acessado por [aqui](https:
 - **NodeJS**
 - **[Google Firebase](https://firebase.google.com/)** - para hospedagem do front-end no Firebase Hosting e do back-end no Firebase Fucntions.
 - **[Lightning Design](http://lightningdesignsystem.com/)** 
+- **Github Actions** - Implementado ferramenta de CI para deploy automático no Firebase Hosting.
 
 ## Requisitos necessários
 
